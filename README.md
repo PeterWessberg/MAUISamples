@@ -16,11 +16,14 @@ To use this code just make the project active, pick your platform and then press
 
 | Android | iPhone |
 | ----------- | ----------- |
-| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/82bdf5d8-1a7c-471f-82e9-f65791e58c6b" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/dbc7a426-a739-46f6-a731-1ccfd72172a9" width="300"> |
+| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/705b5616-0688-4809-a12b-88a9eb6655e7" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/91b54304-3f68-46c1-8b1a-a5147d7596e6" width="300"> |
 
 ### SearchBar Fix
 | Android | iPhone |
 | ----------- | ----------- |
-| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/4ac0180e-5076-41ce-a1fd-a2fc1ea287e2" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/8ab0051c-4be7-42ba-b12f-12af201de55c" width="300"> |
+| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/937cf9e9-ef20-4f90-aae3-34cc93dd5e6e" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0ec889d0-738b-4a33-816a-98d7331ac5eb" width="300"> |
 #
 Feel free to reach out and ask questions or discuss code. Also available for hire. 
+
+
+
