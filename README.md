@@ -11,11 +11,16 @@ Examples of ways to use and extend .Net MAUI. This is just one way to do things.
    - SearchBar - Fix the problem with the SearchBar Icon not matching Theme
 ## Get Started
 To use this code just make the project active, pick your platform and then press F5.
-## Example
+## Showcase
 ### Picker
-
 
 | Android | iPhone |
 | ----------- | ----------- |
-| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/b1061ec9-5920-4af4-bc89-d430b314f2d0" width="400"> | |
+| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/82bdf5d8-1a7c-471f-82e9-f65791e58c6b" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/dbc7a426-a739-46f6-a731-1ccfd72172a9" width="300"> |
 
+### SearchBar Fix
+| Android | iPhone |
+| ----------- | ----------- |
+| <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/4ac0180e-5076-41ce-a1fd-a2fc1ea287e2" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/8ab0051c-4be7-42ba-b12f-12af201de55c" width="300"> |
+#
+Feel free to reach out and ask questions or discuss code. Also available for hire. 
