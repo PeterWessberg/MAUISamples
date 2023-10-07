@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomizeHandlers.Views.SearcBarView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomizeHandlers.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="SearchBar View"
+    Unloaded="SearcBarView_Unloaded">
+    <VerticalStackLayout
+        Padding="20"
+        HorizontalOptions="Center"
+        Spacing="20"
+        VerticalOptions="Center">
+        <Label Text="SearchBar Icon doesn't follow theme changes. With this customization it follows text color." />
+        <SearchBar
+            x:Name="MySearchBar"
+            Margin="10"
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor},
+                                              Dark={StaticResource DarkBackgroundColor}}"
+            CancelButtonColor="{AppThemeBinding Light={StaticResource Black},
+                                                Dark={StaticResource White}}"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Search"
+            SearchButtonPressed="SearchBar_SearchButtonPressed"
+            TextColor="{AppThemeBinding Light={StaticResource Blue100Accent},
+                                        Dark={StaticResource White}}" />
+        <Button Clicked="OnToggleThemeClicked" Text="Toggle Theme" />
+        <Button Clicked="TextColor_Clicked" Text="Toggle Text Color" />
+    </VerticalStackLayout>
+</ContentPage>

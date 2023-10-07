@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickerSample", "src\PickerSample\PickerSample.csproj", "{4E402F13-4B66-444B-82FD-2964488BC9D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomizeHandlers", "src\CustomizeHandlers\CustomizeHandlers.csproj", "{4E402F13-4B66-444B-82FD-2964488BC9D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
