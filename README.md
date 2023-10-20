@@ -9,6 +9,10 @@ Different ways to use and extend .Net MAUI. This is just one way to do things. T
 1. [Customize Handlers](https://github.com/PeterWessberg/MAUISamples/tree/main/src/CustomizeHandlers) Customize and extending handlers.
    - Picker - Make each row different color
    - SearchBar - Fix the problem with the SearchBar Icon not matching Theme
+1. [Customize Controls](https://github.com/PeterWessberg/MAUISamples/tree/main/src/CustomControls) Ways to customize your own controls.
+   - Radial Porgressbar - A radial progress bar with animation
+   - TimeSpan Picker - Input TimeSpan duration
+   - RadioButtons - Radiobutton control with animation
 ## Get Started
 To use this code just make the project active, pick your platform and then press F5.
 ## Showcase
@@ -22,6 +26,16 @@ To use this code just make the project active, pick your platform and then press
 | Android | iPhone |
 | ----------- | ----------- |
 | <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/937cf9e9-ef20-4f90-aae3-34cc93dd5e6e" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0ec889d0-738b-4a33-816a-98d7331ac5eb" width="300"> |
+
+### Radial ProgressBar
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/8bc584f8-ab75-45d1-a984-3a6547837ac8" width="300">
+
+### TimeSpan Picker
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/f852cf9e-dad2-4cde-8860-7e21652c31ec" width="300">
+
+### RadioButtons
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/6aba5854-2eca-4d59-9db2-fa0531f7cc5f" width="300">
+
 #
 Feel free to reach out and ask questions or discuss code. Also available for hire. 
 
