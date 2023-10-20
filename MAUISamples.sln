@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomizeHandlers", "src\CustomizeHandlers\CustomizeHandlers.csproj", "{4E402F13-4B66-444B-82FD-2964488BC9D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "src\CustomControls\CustomControls.csproj", "{FD11D194-DE75-421F-B5D0-63A7BA615902}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,12 @@ Global
 		{4E402F13-4B66-444B-82FD-2964488BC9D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E402F13-4B66-444B-82FD-2964488BC9D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E402F13-4B66-444B-82FD-2964488BC9D4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD11D194-DE75-421F-B5D0-63A7BA615902}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

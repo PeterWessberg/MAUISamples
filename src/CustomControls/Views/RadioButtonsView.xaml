@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomControls.Views.RadioButtonsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomControls.Controls"
+    Title="RadioButtons"
+    BackgroundColor="LightSkyBlue">
+    <VerticalStackLayout Padding="20" HorizontalOptions="Center">
+        <Border
+            Margin="10"
+            Padding="10"
+            BackgroundColor="White">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20" />
+            </Border.StrokeShape>
+
+            <controls:RadioButtonsControl
+                x:Name="MyRadioButtonsControl"
+                Padding="20"
+                Animate="True"
+                ButtonsItems="{Binding MyButtons}"
+                Command="{Binding ButtonSelectedCommand}"
+                CommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}"
+                FontAttributes="Bold"
+                FontSize="28"
+                ImageHeight="30"
+                ImageWidth="30"
+                Spacing="10"
+                TextColor="SteelBlue" />
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

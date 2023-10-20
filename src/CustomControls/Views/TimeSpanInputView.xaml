@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomControls.Views.TimeSpanInputView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomControls.Controls"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    Title="TimeSpan Input Control">
+    <VerticalStackLayout
+        Padding="20"
+        HorizontalOptions="Center"
+        VerticalOptions="Start">
+        <StackLayout Padding="20" Orientation="Horizontal">
+            <Label Text="The time is: " />
+            <Label x:Name="TimeLabel" />
+        </StackLayout>
+        <Label HorizontalOptions="Center" Text="Add TimeSpan" />
+        <Border BackgroundColor="LightGray">
+            <controls:TimeSpanControl
+                x:Name="TimeSpanControl"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Center"
+                PopupHeaderColor="Blue"
+                Preview="True" />
+        </Border>
+        <Label
+            x:Name="ReturnValueLabel"
+            Margin="10"
+            Text="New Time is: " />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CustomControls.Views.RadialProgressBarView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CustomControls.Controls"
+    Title="Radial ProgressBar">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <controls:RadialProgressBarControl
+            x:Name="RadialProgressBar"
+            Grid.Column="1"
+            BarBackgroundColor="LightBlue"
+            BarThickness="10"
+            FontSize="48"
+            HeightRequest="200"
+            Progress="{Binding Source={x:Reference slider}, Path=Value}"
+            TextColor="black"
+            WidthRequest="200" />
+        <Slider
+            x:Name="slider"
+            Maximum="100"
+            Minimum="0" />
+        <Button
+            x:Name="ProgressButton"
+            BorderWidth="0"
+            Clicked="ProgressButton_Clicked"
+            CornerRadius="20"
+            FontSize="16"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            Text="Increase"
+            WidthRequest="110" />
+        <Button
+            x:Name="TimerButton"
+            BorderWidth="0"
+            Clicked="TimerButton_Clicked"
+            CornerRadius="20"
+            FontSize="16"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            Text="Timer"
+            WidthRequest="110" />
+        <Button
+            x:Name="AnimateButton"
+            BorderWidth="0"
+            Clicked="AnimateButton_Clicked"
+            CornerRadius="20"
+            FontSize="16"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            Text="Animate"
+            WidthRequest="110" />
+    </VerticalStackLayout>
+</ContentPage>

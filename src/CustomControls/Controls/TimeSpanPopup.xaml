@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="CustomControls.Controls.TimeSpanPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fonts="clr-namespace:CustomControls.Resources.Fonts"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    CanBeDismissedByTappingOutsideOfPopup="True"
+    HorizontalOptions="Center"
+    Color="Transparent">
+    <Border
+        Background="Transparent"
+        Stroke="Transparent"
+        StrokeThickness="0">
+        <Border.Resources>
+            <ResourceDictionary>
+                <Style x:Key="ButtonPopupDigitTimeSpanStyle" TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="White" />
+                    <Setter Property="CharacterSpacing" Value="3" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightGray" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+                <Style x:Key="ButtonPopupDisplayTimeSpanStyle" TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="Transparent" />
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="LightGray" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+            </ResourceDictionary>
+        </Border.Resources>
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="8" />
+        </Border.StrokeShape>
+        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <BoxView
+                x:Name="HeaderBackground"
+                Grid.Row="0"
+                Color="ForestGreen" />
+            <BoxView
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Color="white" />
+            <Grid Grid.Row="0" Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="AUto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button
+                    x:Name="HourButton"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="0"
+                    Clicked="OnTimeButtonsClicked"
+                    FontSize="40"
+                    Style="{StaticResource ButtonPopupDisplayTimeSpanStyle}"
+                    Text=""
+                    TextColor="White" />
+                <Label
+                    x:Name="HourNameLabel"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="0,0,0,3"
+                    FontSize="16"
+                    Text="h"
+                    TextColor="White"
+                    VerticalTextAlignment="End" />
+                <Button
+                    x:Name="MinuteButton"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    Clicked="OnTimeButtonsClicked"
+                    FontSize="40"
+                    Style="{StaticResource ButtonPopupDisplayTimeSpanStyle}"
+                    Text=""
+                    TextColor="White" />
+                <Label
+                    x:Name="MinuteNameLabel"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Margin="0,0,0,3"
+                    FontSize="16"
+                    Text="m"
+                    TextColor="White"
+                    VerticalTextAlignment="End" />
+                <Button
+                    x:Name="SecondButton"
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    Clicked="OnTimeButtonsClicked"
+                    FontSize="40"
+                    Style="{StaticResource ButtonPopupDisplayTimeSpanStyle}"
+                    Text=""
+                    TextColor="White" />
+                <Label
+                    x:Name="SecondsNameLabel"
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    Margin="0,0,0,3"
+                    FontSize="16"
+                    Text="s"
+                    TextColor="White"
+                    VerticalTextAlignment="End" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="7"
+                    Margin="0,10,0,10"
+                    Clicked="OnBackspaceClicked"
+                    Source="{x:StaticResource BackSpaceSource}"
+                    WidthRequest="30" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="8"
+                    Margin="18"
+                    Clicked="OnCancelButtonClicked"
+                    Source="{x:StaticResource CloseSource}"
+                    WidthRequest="15" />
+            </Grid>
+            <Grid Grid.Row="1" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="1"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="2"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="3"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="4"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="5"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="6"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="7"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="8"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="9"
+                    TextColor="Black" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Padding="20"
+                    Clicked="OnDigitClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="0"
+                    TextColor="black" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Padding="20"
+                    Clicked="OnDoubleZeroClicked"
+                    Style="{StaticResource ButtonPopupDigitTimeSpanStyle}"
+                    Text="00"
+                    TextColor="Black" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Color="White" />
+                <Button
+                    Grid.Column="1"
+                    BackgroundColor="White"
+                    Clicked="OnCancelButtonClicked"
+                    Text="Cancel"
+                    TextColor="ForestGreen" />
+                <Button
+                    Grid.Column="2"
+                    Margin="0,0,10,0"
+                    BackgroundColor="White"
+                    Clicked="OnOKButtonClicked"
+                    Text="Ok"
+                    TextColor="ForestGreen" />
+            </Grid>
+        </Grid>
+    </Border>
+</toolkit:Popup>
