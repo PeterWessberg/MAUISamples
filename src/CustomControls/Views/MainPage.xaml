@@ -23,6 +23,11 @@
                     CommandParameter="{x:Type views:RadioButtonsView}"
                     Detail="Radiobutton control with animation"
                     Text="Radiobutton control" />
+                <TextCell
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type views:WavyBackgroundView}"
+                    Detail="Background drawable"
+                    Text="Wavy background" />
             </TableSection>
         </TableRoot>
     </TableView>

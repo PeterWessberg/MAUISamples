@@ -68,6 +68,9 @@
 	  <Compile Update="Views\RadialProgressBarView.xaml.cs">
 	    <DependentUpon>RadialProgressBarView.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\WavyBackgroundView.xaml.cs">
+	    <DependentUpon>WavyBackgroundView.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -87,6 +90,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TimeSpanInputView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\WavyBackgroundView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
