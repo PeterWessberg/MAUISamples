@@ -36,6 +36,9 @@ To use this code just make the project active, pick your platform and then press
 ### RadioButtons
 <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/6aba5854-2eca-4d59-9db2-fa0531f7cc5f" width="300">
 
+### Double Tap Button
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0f804083-807e-4890-a3c5-5d4b6a72be84" width="300">
+
 #
 Feel free to reach out and ask questions or discuss code. Also available for hire. 
 
