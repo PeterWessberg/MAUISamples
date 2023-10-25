@@ -48,12 +48,6 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Remove="Resources\Fonts\Font_Awesome_6_Brands-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Font_Awesome_6_Free-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Font_Awesome_6_Free-Solid-900.otf" />
-	  <None Remove="Resources\Images\close.svg" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
@@ -67,6 +61,9 @@
 	  </Compile>
 	  <Compile Update="Views\RadialProgressBarView.xaml.cs">
 	    <DependentUpon>RadialProgressBarView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\DubbleTapButtonView.xaml.cs">
+	    <DependentUpon>DubbleTapButtonView.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\WavyBackgroundView.xaml.cs">
 	    <DependentUpon>WavyBackgroundView.xaml</DependentUpon>
@@ -87,6 +84,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\RadioButtonsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DubbleTapButtonView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TimeSpanInputView.xaml">

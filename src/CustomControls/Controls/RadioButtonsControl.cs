@@ -140,7 +140,7 @@ public class RadioButtonsControl : StackLayout
         int index = 0;
         int startIndex = 0;
         int endIndex = 0;
-        // Iterate through the list of buttons and set indes and the new select
+        // Iterate through the list of buttons and set index and the new select
         foreach (RadioButtonItem item in Children)
         {
             if (item.Children[0] is RadioButtonGraphicsView view)
@@ -162,7 +162,7 @@ public class RadioButtonsControl : StackLayout
             index++;
         }
 
-        // We now have the start index and end index in the list. Let us animate.
+        // We now have the start index and end index in the list. Let's animate.
         AnimationStarted?.Invoke();
         bool movingDown = startIndex < endIndex;
         for (int i = startIndex; movingDown ? i <= endIndex : i >= endIndex; i += movingDown ? 1 : -1)
