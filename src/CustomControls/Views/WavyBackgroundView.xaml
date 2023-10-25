@@ -19,10 +19,7 @@
             HorizontalOptions="Center"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" />
-        <GraphicsView
-            Grid.Row="1"
-            Drawable="{StaticResource WaveBottomDrawable}"
-            VerticalOptions="EndAndExpand" />
+        <GraphicsView Grid.Row="1" Drawable="{StaticResource WaveBottomDrawable}" />
         <Label
             Grid.Row="1"
             Margin="30"
