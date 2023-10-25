@@ -13,7 +13,7 @@ Different ways to use and extend .Net MAUI. This is just one way to do things. T
    - Radial Porgressbar - A radial progress bar with animation
    - TimeSpan Picker - Input TimeSpan duration
    - RadioButtons - Radiobutton control with animation
-   - Double Tap Button - User case of iPhone button showing an X and when pressed displaying Clear.
+   - Double Tap Button - Use case of iPhone button showing an X and when pressed displaying Clear.
 ## Get Started
 To use this code just make the project active, pick your platform and then press F5.
 ## Showcase
