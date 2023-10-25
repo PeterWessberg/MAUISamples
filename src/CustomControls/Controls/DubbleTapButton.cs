@@ -22,7 +22,7 @@ namespace CustomControls.Controls
                         new Animation(v => WidthRequest = v, width, 70).Commit(this, "Animate", 16, 200, Easing.SinOut, finished: (v, c) =>
                         {
                             FontFamily = _fontFamily;
-                            TextColor = Colors.DarkGray;
+                            TextColor = Colors.Black;
                             FontSize = 14;
                             CornerRadius = 18;
                             _canExecutCommand = true;
@@ -56,7 +56,7 @@ namespace CustomControls.Controls
             Text = FontAwesomeIcons.Xmark;
             Padding = 0;
             FontSize = 16;
-            TextColor = Colors.DarkGray;
+            TextColor = Colors.Black;
             WidthRequest = width;
             HeightRequest = width;
             BackgroundColor = Colors.LightGray;
