@@ -24,7 +24,7 @@ namespace CustomControls.Controls
                             FontFamily = _fontFamily;
                             TextColor = Colors.Black;
                             FontSize = 14;
-                            CornerRadius = 20;
+                            CornerRadius = 18;
                             _canExecutCommand = true;
                         });
                     }
@@ -52,7 +52,7 @@ namespace CustomControls.Controls
             });
 
             _fontFamily = FontFamily;
-            CornerRadius = 20;
+            CornerRadius = 18;
             Text = FontAwesomeIcons.Xmark;
             Padding = 0;
             FontSize = 16;
@@ -71,7 +71,7 @@ namespace CustomControls.Controls
             {
                 FontFamily = "FontAwesome-Solid";
                 TextColor = Colors.Black;
-                CornerRadius = 20;
+                CornerRadius = 18;
                 Padding = 0;
                 FontSize = 16;
                 _canExecutCommand = false;
