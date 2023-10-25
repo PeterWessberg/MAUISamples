@@ -8,6 +8,7 @@ namespace CustomControls.Controls
         private bool _canExecutCommand = false;
         private ICommand _toggleCommand;
         private string _fontFamily;
+        private int width = 35;
 
         public new event EventHandler Clicked;
 
@@ -16,15 +17,16 @@ namespace CustomControls.Controls
                 {
                     if (!_canExecutCommand)
                     {
-                        new Animation(v => WidthRequest = v, 30, 70).Commit(this, "Animate", 16, 300, Easing.SinOut, finished: (v, c) =>
+                        TextColor = Colors.Transparent;
+                        Text = "Clear";
+                        new Animation(v => WidthRequest = v, width, 70).Commit(this, "Animate", 16, 200, Easing.SinOut, finished: (v, c) =>
                         {
                             FontFamily = _fontFamily;
+                            TextColor = Colors.Black;
                             FontSize = 14;
                             CornerRadius = 20;
-                            Text = "Clear";
+                            _canExecutCommand = true;
                         });
-
-                        _canExecutCommand = true;
                     }
                     else
                     {
@@ -44,37 +46,36 @@ namespace CustomControls.Controls
 
         public DubbleTapButton()
         {
-            _fontFamily = FontFamily;
-
             GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = ToogleCommand
             });
 
+            _fontFamily = FontFamily;
             CornerRadius = 20;
-            FontFamily = "FontAwesome-Solid";
             Text = FontAwesomeIcons.Xmark;
             Padding = 0;
             FontSize = 16;
             TextColor = Colors.Black;
-            WidthRequest = 30;
-            HeightRequest = 30;
+            WidthRequest = width;
+            HeightRequest = width;
             BackgroundColor = Colors.LightGray;
+            FontFamily = "FontAwesome-Solid";
         }
 
         private void ReSet()
         {
-            new Animation(v => WidthRequest = v, 70, 30).Commit(this, "Animate", 16, 300, Easing.SinOut, finished: (v, c) =>
+            TextColor = Colors.Transparent;
+            Text = FontAwesomeIcons.Xmark;
+            new Animation(v => WidthRequest = v, 70, width).Commit(this, "Animate", 16, 200, Easing.SinOut, finished: (v, c) =>
             {
-                CornerRadius = 20;
                 FontFamily = "FontAwesome-Solid";
-                Text = FontAwesomeIcons.Xmark;
+                TextColor = Colors.Black;
+                CornerRadius = 20;
                 Padding = 0;
                 FontSize = 16;
-                TextColor = Colors.Black;
+                _canExecutCommand = false;
             });
-
-            _canExecutCommand = false;
         }
     }
 }

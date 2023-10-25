@@ -8,7 +8,7 @@
     BackgroundColor="LightGoldenrodYellow">
     <ContentPage.Resources>
         <DataTemplate x:Key="BookTemplate">
-            <Border>
+            <Border BackgroundColor="WhiteSmoke">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="10" />
                 </Border.StrokeShape>
