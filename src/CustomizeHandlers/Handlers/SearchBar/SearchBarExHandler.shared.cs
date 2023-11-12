@@ -11,7 +11,7 @@ public partial class SearchBarExHandler
             //["IconBackgroundCircle"] = MapIconCircle,
             ["IconColor"] = MapIconColor,
             //["TextBackgroundColor"] = MapTextBackgroundColor,
-            ["CancelText"] = MapCancelText,
+            ["CancelButtonText"] = MapCancelText,
         };
 
     public SearchBarExHandler() : base(SearchBarMapper)

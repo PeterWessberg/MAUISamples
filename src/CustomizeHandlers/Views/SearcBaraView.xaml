@@ -18,8 +18,8 @@
             Margin="10"
             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroundColor},
                                               Dark={StaticResource DarkBackgroundColor}}"
-            CancelButtonColor="{AppThemeBinding Light={StaticResource Black},
-                                                Dark={StaticResource White}}"
+            CancelButtonColor="{AppThemeBinding Light={StaticResource BlackTextColor},
+                                                Dark={StaticResource WhiteTextColor}}"
             HorizontalOptions="FillAndExpand"
             Placeholder="Search"
             SearchButtonPressed="SearchBar_SearchButtonPressed"

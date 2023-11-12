@@ -13,6 +13,8 @@
 
             <Color x:Key="LightBackgroundColor">#FFFFFF</Color>
             <Color x:Key="DarkBackgroundColor">#222222</Color>
+            <Color x:Key="BlackTextColor">#222222</Color>
+            <Color x:Key="WhiteTextColor">#FFFFFF</Color>
 
         </ResourceDictionary>
     </Application.Resources>
