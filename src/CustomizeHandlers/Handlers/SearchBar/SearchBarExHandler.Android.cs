@@ -17,6 +17,10 @@ public partial class SearchBarExHandler : SearchBarHandler
 
     public AColor GetTextColor() => VirtualView.TextColor.ToPlatform();
 
+    public void SetCancelButtonText()
+    {
+    }
+
     //TODO
     public static void MapIconBackgroundColor(ISearchBarHandler handler, ISearchBar searchBar)
     {

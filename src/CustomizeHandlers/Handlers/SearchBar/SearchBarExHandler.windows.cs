@@ -12,4 +12,8 @@ public partial class SearchBarExHandler : SearchBarHandler
     }
 
     private WColor GetTextColor() => VirtualView.TextColor.ToWindowsColor();
+
+    public void SetCancelButtonText()
+    {
+    }
 }

@@ -11,6 +11,7 @@ public partial class SearchBarExHandler
             //["IconBackgroundCircle"] = MapIconCircle,
             ["IconColor"] = MapIconColor,
             //["TextBackgroundColor"] = MapTextBackgroundColor,
+            ["CancelText"] = MapCancelText,
         };
 
     public SearchBarExHandler() : base(SearchBarMapper)
@@ -35,5 +36,11 @@ public partial class SearchBarExHandler
     {
         if (handler is SearchBarExHandler searchBarHandler)
             searchBarHandler.SetIconColor(searchBarHandler.GetTextColor());
+    }
+
+    private static void MapCancelText(SearchBarHandler handler, ISearchBar bar)
+    {
+        if (handler is SearchBarExHandler searchBarHandler)
+            searchBarHandler.SetCancelButtonText();
     }
 }

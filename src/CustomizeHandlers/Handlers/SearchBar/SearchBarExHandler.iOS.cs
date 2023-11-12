@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Handlers;
+﻿using Foundation;
+using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 using UIKit;
 
@@ -16,4 +17,9 @@ public partial class SearchBarExHandler : SearchBarHandler
     }
 
     private UIColor GetTextColor() => VirtualView.TextColor.ToPlatform();
+
+    public void SetCancelButtonText()
+    {
+        PlatformView.SetValueForKey(NSObject.FromObject("Clear"), new NSString("cancelButtonText"));
+    }
 }
