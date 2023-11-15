@@ -17,7 +17,7 @@ public partial class SearchBarExHandler : SearchBarHandler
 
     public AColor GetTextColor() => VirtualView.TextColor.ToPlatform();
 
-    public void SetCancelButtonText()
+    public void SetCancelButtonText(string newCancelButtonText)
     {
     }
 

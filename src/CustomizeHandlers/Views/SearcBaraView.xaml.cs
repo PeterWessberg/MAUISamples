@@ -1,3 +1,5 @@
+using CustomizeHandlers.Resources.Localization;
+
 namespace CustomizeHandlers.Views;
 
 public partial class SearcBarView : ContentPage
@@ -8,6 +10,8 @@ public partial class SearcBarView : ContentPage
     public SearcBarView()
     {
         InitializeComponent();
+        RadioButtons.LanguageChanged += RadioButtons_LanguageChanged;
+
         colors = new Color[]
         {
             Colors.Green,
@@ -16,6 +20,11 @@ public partial class SearcBarView : ContentPage
             Colors.Yellow,
             Colors.Magenta,
         };
+    }
+
+    private void RadioButtons_LanguageChanged(object sender, string e)
+    {
+        MySearchBar.CancelButtonText = AppResources.CancelButtonText;
     }
 
     private void SearcBarView_Unloaded(object sender, EventArgs e)

@@ -1,8 +1,9 @@
-﻿using Microsoft.Maui.Handlers;
+﻿using CustomizeHandlers.Controls;
+using Microsoft.Maui.Handlers;
 
 namespace CustomizeHandlers.Handlers;
 
-public partial class SearchBarExHandler
+public partial class SearchBarExHandler 
 {
     public static readonly IPropertyMapper<ISearchBar, SearchBarHandler> SearchBarMapper =
         new PropertyMapper<ISearchBar, SearchBarHandler>(Mapper)
@@ -30,6 +31,13 @@ public partial class SearchBarExHandler
         {
             SetIconColor(GetTextColor());
         }
+        if (propertyName == SearchBarLang.CancelButtonTextProperty.PropertyName)
+        {
+            if (VirtualView is SearchBarLang searchBarLang)
+            {
+                SetCancelButtonText(searchBarLang.CancelButtonText);
+            }
+        }
     }
 
     public static void MapIconColor(ISearchBarHandler handler, ISearchBar searchBar)
@@ -40,7 +48,10 @@ public partial class SearchBarExHandler
 
     private static void MapCancelText(SearchBarHandler handler, ISearchBar bar)
     {
-        if (handler is SearchBarExHandler searchBarHandler)
-            searchBarHandler.SetCancelButtonText();
+        if (handler is SearchBarExHandler searchBarHandler && searchBarHandler.VirtualView is SearchBarLang searchBarLang)
+        {
+            searchBarHandler.SetCancelButtonText(searchBarLang.CancelButtonText);
+        }
     }
+
 }
