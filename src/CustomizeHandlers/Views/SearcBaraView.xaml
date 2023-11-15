@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:CustomizeHandlers.Controls"
+    xmlns:resources="clr-namespace:CustomizeHandlers.Resources.Localization"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="SearchBar View"
     Unloaded="SearcBarView_Unloaded">
@@ -20,7 +21,7 @@
                                               Dark={StaticResource DarkBackgroundColor}}"
             CancelButtonColor="{AppThemeBinding Light={StaticResource BlackTextColor},
                                                 Dark={StaticResource WhiteTextColor}}"
-            CancelButtonText="Clear"
+            CancelButtonText="{x:Static resources:AppResources.CancelButtonText}"
             HorizontalOptions="FillAndExpand"
             Placeholder="Search"
             SearchButtonPressed="SearchBar_SearchButtonPressed"
