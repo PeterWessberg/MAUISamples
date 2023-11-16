@@ -28,6 +28,16 @@ public partial class SearchBarExHandler : SearchBarHandler
         {
             bool hasText = !string.IsNullOrEmpty(uiSearchBar.Text);
 
+            if(VirtualView.CancelButtonColor is not null)
+            {
+                 // Honor the text color. 
+                var cancelButtonAttributes = new UIStringAttributes
+                {
+                    ForegroundColor = VirtualView.CancelButtonColor.ToPlatform()
+                };
+                UIBarButtonItem.AppearanceWhenContainedIn(typeof(UISearchBar)).SetTitleTextAttributes(cancelButtonAttributes, UIControlState.Normal);
+            }
+
             uiSearchBar.ShowsCancelButton = false;
             if (hasText)
             {
@@ -37,6 +47,17 @@ public partial class SearchBarExHandler : SearchBarHandler
             if (uiSearchBar.ValueForKey(new NSString("cancelButton")) is UIButton cancelButton)
             {
                 cancelButton.Enabled = hasText;
+            }
+        }
+    }
+
+    public static void MapTextBackgroundColor(ISearchBarHandler handler, ISearchBar searchBar)
+    {
+        if (handler is SearchBarExHandler customHandler)
+        {
+            if(customHandler.PlatformView is UISearchBar uiSearchBar) 
+            {
+                uiSearchBar.BarTintColor = customHandler.VirtualView.CancelButtonColor.ToPlatform();
             }
         }
     }
