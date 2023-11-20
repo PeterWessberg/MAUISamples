@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomizeHandlers", "src\Cu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomControls", "src\CustomControls\CustomControls.csproj", "{FD11D194-DE75-421F-B5D0-63A7BA615902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSamples", "GraphicsSamples\GraphicsSamples.csproj", "{1021913B-2228-47AC-BD83-B26B00205712}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsSamples", "src\GraphicsSamples\GraphicsSamples.csproj", "{1021913B-2228-47AC-BD83-B26B00205712}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
