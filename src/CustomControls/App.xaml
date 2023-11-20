@@ -25,8 +25,6 @@
                 Glyph="{x:Static fonts:FontAwesomeIcons.X}"
                 Color="{StaticResource White}" />
 
-            <!--  Colors  -->
-            <Color x:Key="BlueGreen">#007098</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
