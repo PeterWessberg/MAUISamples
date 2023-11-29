@@ -44,7 +44,7 @@ To use this code just make the project active, pick your platform and then press
 <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0f804083-807e-4890-a3c5-5d4b6a72be84" width="300">
 
 ### Rotating Cube
-<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/7179feba-53ed-4c62-9626-16a24a7e1f33" width="300">
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/e4fa5541-9938-4583-a22c-263eb859b3ff" width="300">
 
 #
 Feel free to reach out and ask questions or discuss code. Also available for hire. 
