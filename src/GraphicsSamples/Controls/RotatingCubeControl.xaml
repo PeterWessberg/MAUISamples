@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="GraphicsSamples.Controls.RotatingCubeControl"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:drawables="clr-namespace:GraphicsSamples.Drawables">
+    <Grid RowDefinitions="Auto, *">
+        <VerticalStackLayout Grid.Row="0" Padding="10">
+            <Label
+                Margin="20"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Speed" />
+            <Slider
+                x:Name="SpeedSlider"
+                Maximum="360"
+                Minimum="0"
+                ValueChanged="Slider_ValueChanged" />
+            <StackLayout
+                Padding="10"
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                <Label
+                    Margin="10"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="Animation" />
+                <Switch
+                    x:Name="AnimationToggle"
+                    HorizontalOptions="Center"
+                    IsToggled="True"
+                    Toggled="AnimationToggle_Toggled" />
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                <Label
+                    Margin="10"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    Text="Shader" />
+                <Switch x:Name="ShadingToggle" Toggled="ShadingToggle_Toggled" />
+            </StackLayout>
+        </VerticalStackLayout>
+        <drawables:RotatingCubeGraphics x:Name="RotatingCubeGraphics" Grid.Row="1" />
+    </Grid>
+</ContentView>

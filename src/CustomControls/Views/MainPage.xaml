@@ -25,11 +25,6 @@
                     Text="Radiobutton control" />
                 <TextCell
                     Command="{Binding NavigateCommand}"
-                    CommandParameter="{x:Type views:WavyBackgroundView}"
-                    Detail="Background drawable"
-                    Text="Wavy background" />
-                <TextCell
-                    Command="{Binding NavigateCommand}"
                     CommandParameter="{x:Type views:DubbleTapButtonView}"
                     Detail="A button that need two taps to activate."
                     Text="Double Tap Button" />

@@ -13,6 +13,11 @@
                     CommandParameter="{x:Type views:WavyBackgroundView}"
                     Detail="Background drawable"
                     Text="Wavy background" />
+                <TextCell
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="{x:Type views:RotatingCubeView}"
+                    Detail="3D Animation"
+                    Text="Rotating Cube" />
 
             </TableSection>
         </TableRoot>
