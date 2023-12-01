@@ -55,7 +55,6 @@ public class RotatingCubeDrawable : IDrawable
         PrintDot(canvas, dirtyRect, effectiveScale);
 
         canvas.RestoreState();
-
     }
 
     private void DrawLines(ICanvas canvas, RectF dirtyRect, float effectiveScale)
@@ -113,7 +112,6 @@ public class RotatingCubeDrawable : IDrawable
         return Colors.White.MultiplyBrightness(brightness);
     }
 
-
     private void DrawPolygon(ICanvas canvas, PointF[] points, Color color)
     {
         using (var path = new PathF())
@@ -148,7 +146,7 @@ public class RotatingCubeDrawable : IDrawable
         var colors = new Color[]
         {
             Colors.Green,
-            Colors.Purple,
+            Colors.Purple, 
             Colors.Blue,
             Colors.Yellow,
             Colors.Magenta,
