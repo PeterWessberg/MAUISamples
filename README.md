@@ -14,6 +14,9 @@ Different ways to use and extend .Net MAUI. This is just one way to do things. T
    - TimeSpan Picker - Input TimeSpan duration
    - RadioButtons - Radiobutton control with animation
    - Double Tap Button - Use case of iPhone button showing an X and when pressed displaying Clear.
+1. [Graphics](https://github.com/PeterWessberg/MAUISamples/tree/main/src/GraphicsSamples) Ways to manipulate graphics.
+   - Rotating 3D Cube - A rotating cube with dots and shader rotating on your screen.
+
 ## Get Started
 To use this code just make the project active, pick your platform and then press F5.
 ## Showcase
@@ -39,6 +42,9 @@ To use this code just make the project active, pick your platform and then press
 
 ### Double Tap Button
 <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0f804083-807e-4890-a3c5-5d4b6a72be84" width="300">
+
+### Rotating Cube
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/e4fa5541-9938-4583-a22c-263eb859b3ff" width="300">
 
 #
 Feel free to reach out and ask questions or discuss code. Also available for hire. 
