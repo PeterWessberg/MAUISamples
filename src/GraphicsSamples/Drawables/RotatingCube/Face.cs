@@ -5,33 +5,30 @@ namespace GraphicsSamples.Drawables;
 public class Face
 {
     private int[] vertexIndices;
-    private Point3D[] cubeVertices;
+    private Cube cube;
+    
+    public Vector3 Normal { get; private set; }
 
-    public Point3D[] Vertices => vertexIndices.Select(index => cubeVertices[index]).ToArray();
+    public Vector3[] Vertices => vertexIndices.Select(index => cube.Vertices[index]).ToArray();
 
-    public Color FaceColor { get; set; }
+    public int[] VertexIndices { get => vertexIndices; set => vertexIndices = value; }
 
-    public Face(int[] indices, Point3D[] globalVertices)
+    public Face(int[] indices, Cube cube)
     {
         vertexIndices = indices;
-        cubeVertices = globalVertices;
+        this.cube = cube;
+        CalculateNormal();
     }
 
-    public Vector3 CalculateNormal()
+    private void CalculateNormal()
     {
-        Vector3 normal = new Vector3(0, 0, 0);
-
-        for (int i = 0; i < Vertices.Length; i++)
-        {
-            Point3D current = Vertices[i];
-            Point3D next = Vertices[(i + 1) % Vertices.Length];
-
-            normal.X += (current.Y - next.Y) * (current.Z + next.Z);
-            normal.Y += (current.Z - next.Z) * (current.X + next.X);
-            normal.Z += (current.X - next.X) * (current.Y + next.Y);
-        }
-
-        return Vector3.Normalize(normal);
+        // Assuming vertices are in correct winding order for a face
+        var v1 = cube.Vertices[vertexIndices[1]] - cube.Vertices[vertexIndices[0]];
+        var v2 = cube.Vertices[vertexIndices[2]] - cube.Vertices[vertexIndices[0]];
+        Normal = Vector3.Normalize(Vector3.Cross(v1, v2));
     }
 }
+
+
+
 

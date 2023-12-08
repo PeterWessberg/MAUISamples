@@ -1,12 +1,15 @@
-﻿namespace GraphicsSamples.Drawables;
+﻿using System.Numerics;
+
+namespace GraphicsSamples.Drawables;
 
 public class RotatingCubeGraphics : GraphicsView
 {
     private const int BaseUpdateInterval = 16; // Base for 60 FPS
     private double dynamicUpdateInterval;
     private DateTime lastUpdate;
-    private CancellationTokenSource cts = new();
+    private CancellationTokenSource cts;
     private RotatingCubeDrawable drawable;
+    private Vector3 lastRotationAngles;
     public EventHandler<PanUpdatedEventArgs> Panning;
     public EventHandler<PanUpdatedEventArgs> PanningCompleted;
 
@@ -22,13 +25,14 @@ public class RotatingCubeGraphics : GraphicsView
     }
 
     private bool isShadingEnabled = false;
-    public bool IsShadingEnabled 
-    { 
-        get => isShadingEnabled; 
+    public bool IsShadingEnabled
+    {
+        get => isShadingEnabled;
         set
         {
             isShadingEnabled = value;
             drawable.IsShadingEnabled = value;
+            if (!drawable.IsRotating) Invalidate();
         }
     }
     private bool doAnimation = false;
@@ -37,29 +41,61 @@ public class RotatingCubeGraphics : GraphicsView
         get => doAnimation;
         set
         {
-            if( value == true)
+            if (value)
             {
                 drawable.IsRotating = true;
-                lastUpdate = DateTime.UtcNow;
-                drawable.RotationSpeed = (float)rotationSpeed;
-                cts = new();
-                _ = UpdateCanvas();
+                drawable.RotationAngles = lastRotationAngles; // Resume from last known angles
+                StartAnimation();
             }
             else
             {
                 cts.Cancel();
                 drawable.IsRotating = false;
+                lastRotationAngles = drawable.RotationAngles; // Save current rotation angles
             }
-
             doAnimation = value;
             drawable.DoAnimation = value;
+        }
+    }
+
+    private float lightSourccePosition;
+    public float LightSorucePosition
+    {
+        get => lightSourccePosition;
+        set
+        {
+            lightSourccePosition = value;
+            drawable.Light.Position = new Vector3(value, drawable.Light.Position.Y, drawable.Light.Position.Z);
+
+            if (!drawable.IsRotating) Invalidate();
+        }
+    }
+    private float lightIntensity;
+    public float LightIntensity
+    {
+        get => lightIntensity;
+        set
+        {
+            lightIntensity = value;
+            drawable.Light.Intensity = new Vector3(value, value, value);
+            if (!drawable.IsRotating) Invalidate();
+        }
+    }
+    private float attenuation;
+    public float Attenuation
+    {
+        get => attenuation;
+        set
+        {
+            attenuation = value;
+            drawable.Attenuation = value;
+            if (!drawable.IsRotating) Invalidate();
         }
     }
 
     public RotatingCubeGraphics()
     {
         drawable = new RotatingCubeDrawable();
-        drawable.Angle = 25;
         drawable.AngleX = 20;
         drawable.AngleY = 20;
         Drawable = drawable;
@@ -71,8 +107,14 @@ public class RotatingCubeGraphics : GraphicsView
         panGesture.PanUpdated += OnPanUpdated;
         GestureRecognizers.Add(panGesture);
         dynamicUpdateInterval = BaseUpdateInterval;
+        StartAnimation();
+    }
 
+    private void StartAnimation()
+    {
         lastUpdate = DateTime.UtcNow;
+        drawable.RotationSpeed = (float)rotationSpeed;
+        cts = new CancellationTokenSource();
         _ = UpdateCanvas();
     }
 
@@ -86,9 +128,10 @@ public class RotatingCubeGraphics : GraphicsView
             if (timeSinceLastUpdate >= dynamicUpdateInterval)
             {
                 lastUpdate = currentUpdate;
-
+                drawable.DeltaTime = (float)timeSinceLastUpdate / 1000f;
                 Invalidate();
                 AdjustFrameRate(timeSinceLastUpdate);
+
 
                 var processingTime = (DateTime.UtcNow - currentUpdate).TotalMilliseconds;
                 var delay = Math.Max(dynamicUpdateInterval - processingTime, 0);
