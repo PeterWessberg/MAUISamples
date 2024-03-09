@@ -32,7 +32,7 @@ To use this code just make the project active, pick your platform and then press
 | <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/937cf9e9-ef20-4f90-aae3-34cc93dd5e6e" width="300"> |<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/0ec889d0-738b-4a33-816a-98d7331ac5eb" width="300"> |
 
 ### Radial ProgressBar
-<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/8bc584f8-ab75-45d1-a984-3a6547837ac8" width="300">
+<img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/a57a3cb9-cec8-46e9-a286-53a5b5a5b6dc" width="300">
 
 ### TimeSpan Picker
 <img src="https://github.com/PeterWessberg/MAUISamples/assets/354365/f852cf9e-dad2-4cde-8860-7e21652c31ec" width="300">
