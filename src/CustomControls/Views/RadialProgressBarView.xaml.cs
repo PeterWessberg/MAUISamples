@@ -13,10 +13,23 @@ public partial class RadialProgressBarView : ContentPage
         BindingContext = this;
     }
 
-    private void ProgressButton_Clicked(object sender, EventArgs e)
+    private async void ProgressButton_Clicked(object sender, EventArgs e)
     {
-        RadialProgressBar.Progress += 5;
-        Task.Delay(100);
+
+        var acquired = await _mutex.WaitAsync(0); 
+        if (!acquired)
+            return; 
+
+        try
+        {
+            RadialProgressBar.Progress += 5;
+        }
+        finally
+        {
+            _mutex.Release(); 
+        }
+
+        await Task.Delay(100); 
     }
 
     private void TimerButton_Clicked(object sender, EventArgs e)
@@ -24,14 +37,12 @@ public partial class RadialProgressBarView : ContentPage
         InitializeTimer();
     }
 
-    private void InitializeTimer()
+    private async void InitializeTimer()
     {
         // Prevent multiple clicks
-        if (_mutex.CurrentCount == 0)
-        {
+        var acquired = await _mutex.WaitAsync(0); 
+        if (!acquired)
             return;
-        }
-        _mutex.Wait();
 
         RadialProgressBar.Progress = 0;
         timer = new System.Timers.Timer(500);
@@ -58,16 +69,27 @@ public partial class RadialProgressBarView : ContentPage
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void AnimateButton_Clicked(object sender, EventArgs e)
+    private async void AnimateButton_Clicked(object sender, EventArgs e)
     {
-        Dispatcher.Dispatch(() =>
+        var acquired = await _mutex.WaitAsync(0); 
+        if (!acquired)
+            return; 
+
+        try
         {
-            var firstAnimation = new Animation(v => RadialProgressBar.Progress = v, 0, 90);
-            var secondAnimation = new Animation(v => RadialProgressBar.Progress = v, 90, 100);
-            firstAnimation.Commit(RadialProgressBar, "FirstAnimation", 16, 2000, Easing.Linear, (v, c) =>
+            var firstAnimation = new Animation(v => RadialProgressBar.Progress = v, 0, 90, Easing.Linear);
+            var secondAnimation = new Animation(v => RadialProgressBar.Progress = v, 90, 100, Easing.Linear);
+
+            firstAnimation.Commit(this, "FirstAnimation", 16, 2000, Easing.Linear, (v, c) =>
             {
-                secondAnimation.Commit(RadialProgressBar, "SecondAnimation", 16, 2000, Easing.Linear);
-            });
-        });
+                secondAnimation.Commit(this, "SecondAnimation", 16, 2000, Easing.Linear, (v2, c2) =>
+                {
+                }, () => false);
+            }, () => false);
+        }
+        finally
+        {
+            _mutex.Release(); 
+        }
     }
 }
