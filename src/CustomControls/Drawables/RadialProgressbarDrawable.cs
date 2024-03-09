@@ -14,10 +14,9 @@ public class RadialProgressbarDrawable : IDrawable
         var progress = _radialProgressBarControl.Progress;
         var isFullCircle = progress == 100;
         var progressAngle = progress / 100;
-        var margin = 5;
         var centerX = dirtyRect.Width / 2;
         var centerY = dirtyRect.Height / 2;
-        var radius = (dirtyRect.Width / 2) - margin;
+        var radius = (dirtyRect.Width / 2);
 
         // Explaination for coordinators.
         // Start 0 is at 3 o'clock. We travel anticlockwise. So 12 o'clock is 90 degrees.
