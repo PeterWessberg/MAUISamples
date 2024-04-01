@@ -1,6 +1,7 @@
 # .Net MAUI Samples
 [![Static Badge](https://img.shields.io/badge/.Net_MAUI-blueviolet)](https://dotnet.microsoft.com/en-us/apps/maui)
 [![Licensed under the MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PeterWessberg/MAUISamples/blob/main/LICENSE.txt)
+![Static Badge](https://img.shields.io/badge/.Net_8.0-blue)
 
 Different ways to use and extend .Net MAUI. This is just one way to do things. There are always ways to improve and refactor this code. 
 
