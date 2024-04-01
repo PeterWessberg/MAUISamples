@@ -111,11 +111,11 @@
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionCustomizeHandlersHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 	<ItemGroup>
-	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.7" />
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.14" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.7" />
+	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
 	</ItemGroup>
 
 </Project>
