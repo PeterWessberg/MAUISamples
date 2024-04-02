@@ -14,32 +14,26 @@
             x:Name="PickerLabel"
             FontSize="16"
             HorizontalOptions="Center" />
-        <Border
-            BackgroundColor="AliceBlue"
-            HorizontalOptions="Center"
-            Stroke="DarkSlateBlue"
-            StrokeThickness="2">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="20" />
-            </Border.StrokeShape>
-            <controls:PickerRowEx
-                x:Name="MyPicker"
-                Title="Pick an Item"
-                Margin="10"
-                BackgroundColor="Transparent"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"
-                MinimumWidthRequest="200"
-                SelectedIndexChanged="MyPicker_SelectedIndexChanged"
-                TextColor="Blue">
-                <controls:PickerRowEx.Items>
-                    <x:String>Green</x:String>
-                    <x:String>Purple</x:String>
-                    <x:String>Blue</x:String>
-                    <x:String>Yellow</x:String>
-                    <x:String>Magenta</x:String>
-                </controls:PickerRowEx.Items>
-            </controls:PickerRowEx>
-        </Border>
+        <controls:PickerRowEx
+            x:Name="MyPicker"
+            Title="Pick an Item"
+            Margin="10"
+            Padding="0,0,0,0"
+            BackgroundColor="Transparent"
+            BorderColor="DarkBlue"
+            HorizontalOptions="CenterAndExpand"
+            HorizontalTextAlignment="Center"
+            MinimumWidthRequest="200"
+            SelectedIndexChanged="MyPicker_SelectedIndexChanged"
+            TextColor="Blue">
+            <controls:PickerRowEx.Items>
+                <x:String>Green</x:String>
+                <x:String>Purple</x:String>
+                <x:String>Blue</x:String>
+                <x:String>Yellow</x:String>
+                <x:String>Magenta</x:String>
+            </controls:PickerRowEx.Items>
+        </controls:PickerRowEx>
+
     </VerticalStackLayout>
 </ContentPage>

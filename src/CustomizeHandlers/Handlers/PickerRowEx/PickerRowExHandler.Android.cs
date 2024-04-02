@@ -9,6 +9,7 @@ using Microsoft.Maui.Platform;
 using AppCompatAlertDialog = AndroidX.AppCompat.App.AlertDialog;
 using AResource = Android.Resource;
 using View = Android.Views.View;
+using Color = Microsoft.Maui.Graphics.Color;
 
 namespace CustomizeHandlers.Handlers;
 
@@ -27,6 +28,14 @@ public partial class PickerRowExHandler : PickerHandler
         platformView.FocusChange -= OnFocusChange;
         platformView.Click -= OnClick;
         base.DisconnectHandler(platformView);
+    }
+
+    public void SetPadding(Thickness padding)
+    {
+    }
+    public void SetBorderColor(Color color)
+    {
+        
     }
 
     /// <summary>

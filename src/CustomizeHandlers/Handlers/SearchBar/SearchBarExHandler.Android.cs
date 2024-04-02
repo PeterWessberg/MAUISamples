@@ -20,7 +20,6 @@ public partial class SearchBarExHandler : SearchBarHandler
     public void SetCancelButtonText(string newCancelButtonText)
     {
     }
-
     //TODO
     public static void MapIconBackgroundColor(ISearchBarHandler handler, ISearchBar searchBar)
     {

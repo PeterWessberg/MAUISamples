@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Drawable\circle_border.xml" />
+	  <None Remove="Resources\Fonts\fa-solid-900.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>

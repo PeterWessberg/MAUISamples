@@ -1,32 +1,73 @@
 ﻿using CoreFoundation;
+using CoreGraphics;
 using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
 using UIKit;
 
 namespace CustomizeHandlers.Handlers;
 
-public partial class PickerRowExHandler : PickerHandler
-{
-    protected override void ConnectHandler(MauiPicker picker)
+    public partial class PickerRowExHandler : PickerHandler
     {
-        base.ConnectHandler(picker);
-
-        if (picker is not null)
+        protected override void ConnectHandler(MauiPicker picker)
         {
-            var pickerView = picker.UIPickerView;
-            pickerView.WeakDelegate = new UIPickerViewDelegateEx(VirtualView);
-        }
-    }
+            base.ConnectHandler(picker);
 
-    protected override void DisconnectHandler(MauiPicker platformView)
-    {
-        if (platformView.UIPickerView is UIPickerView pickerView)
-        {
-            pickerView.WeakDelegate = null;
+            if (picker is not null)
+            {
+                var pickerView = picker.UIPickerView;
+                pickerView.WeakDelegate = new UIPickerViewDelegateEx(VirtualView);
+            }
         }
 
-        base.DisconnectHandler(platformView);
-    }
+        protected override void DisconnectHandler(MauiPicker platformView)
+        {
+            if (platformView.UIPickerView is UIPickerView pickerView)
+            {
+                pickerView.WeakDelegate = null;
+            }
+
+            base.DisconnectHandler(platformView);
+        }
+
+        public void SetPadding(Thickness padding)
+        {
+            var margin = 5;
+
+            if (PlatformView is not UITextField textField) return;
+
+            textField.LeftView = new UIView(new CGRect(0, 0, padding.Left, textField.Frame.Height));
+            textField.LeftViewMode = UITextFieldViewMode.Always;
+
+            var fontAwesomeLabel = new UILabel
+            {
+                Text = "\uf0d7",
+                Font = UIFont.FromName("Font Awesome 5 Free", 20),
+                TextAlignment = UITextAlignment.Left,
+            };
+            fontAwesomeLabel.SizeToFit();
+
+            var originalLabelWidth = fontAwesomeLabel.Frame.Width + margin;
+            var newContainerWidth = originalLabelWidth + (float)padding.Right;
+
+            var labelYPosition = (textField.Frame.Height - fontAwesomeLabel.Frame.Height) / 2;
+
+            var containerView = new UIView(new CGRect(0, 0, newContainerWidth, textField.Frame.Height));
+
+            fontAwesomeLabel.Frame = new CGRect((float)padding.Right, labelYPosition, originalLabelWidth, fontAwesomeLabel.Frame.Height);
+
+            containerView.AddSubview(fontAwesomeLabel);
+
+            textField.RightView = containerView;
+            textField.RightViewMode = UITextFieldViewMode.Always;
+        }
+
+        public void SetBorderColor(Color color)
+        {
+            PlatformView.Layer.CornerRadius = 10;
+            PlatformView.Layer.BorderWidth = 1;
+            PlatformView.Layer.BorderColor = color.ToCGColor();
+        }
+
 
     private class UIPickerViewDelegateEx : UIPickerViewDelegate
     {
